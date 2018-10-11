@@ -1,0 +1,30 @@
+body, html{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+
+  &-title{
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #888;
+    &:after{
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100px;
+      height: 5px;
+      background-color: #ccc;
+      bottom: 0;
+      left: 50%;
+      margin-left: -50px;
+    }
+  }
+
+  max-width: 768px;
+  padding: 80px 10px;
+  margin: 0 auto;
+}

@@ -1,0 +1,48 @@
+{
+  "name": "capitalp-block",
+  "version": "1.0.0",
+  "description": "A WordPress theme for Capital P",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp serve",
+    "watch": "gulp watch",
+    "build": "bulp build",
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fumikito/capitalp.git"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "fumikito <guy@hametuha.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fumikito/capitalp/issues"
+  },
+  "homepage": "https://github.com/fumikito/capitalp#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.2",
+    "browser-sync": "^2.26.0",
+    "eslint": "^5.4.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "event-stream": "^3.3.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-load-plugins": "^1.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^2.2",
+    "gulp-sourcemaps": "^1.5",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^4.19.1",
+    "webpack-stream": "^5.1.1"
+  }
+}

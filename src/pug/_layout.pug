@@ -1,0 +1,20 @@
+doctype
+html
+    block vars
+    -
+        if(!styles){
+            styles=[];
+        }
+
+    head
+        meta(charset='utf-8')
+        title #{title}
+        link(rel='stylesheet' href='./assets/css/style.css')
+        each style in styles
+            link(rel='stylesheet' href='./assets/css/' + style + '.css')
+    body
+        .container
+            h1.container-title=title
+            block content
+
+        script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')

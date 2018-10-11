@@ -1,0 +1,17 @@
+extends _layout
+
+block vars
+    -
+        var title = 'Alert Box';
+        var styles = ['alert'];
+
+block content
+    -
+        var alerts = [ 'success', 'warning', 'danger', 'info' ];
+
+    each className in alerts
+        div(class=`alert alert-${className}`)
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+              | sed do eiusmod tempor incididunt ut,
+              a(href='#') labore
+              |  et dolore magna aliqua.
