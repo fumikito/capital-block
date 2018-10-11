@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp serve",
     "watch": "gulp watch",
-    "build": "bulp build",
+    "build": "gulp build",
     "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
