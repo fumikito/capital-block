@@ -13,25 +13,16 @@
 // Do not load directly.
 defined( 'ABSPATH' ) || die();
 
-// Register block.
-add_action( 'init', function() {
-	$info     = get_file_data( __FILE__, [ 'version' => 'Version' ] );
-	$version  = $info['version'];
-	$base_url = plugin_dir_url( __FILE__ );
-	// Register CSS
-	wp_register_style( 'capital-block-alert', $base_url . 'assets/css/alert.css', [], $version );
-	// Register JS
-	wp_register_script( 'capital-block-alert', $base_url . 'assets/js/alert.js', [ 'wp-element', 'wp-blocks' ], $version, true );
-	// Register block.
-	if ( defined( 'GUTENBERG_VERSION' ) ) {
-		register_block_type( 'capital-block/alert', [
-			'editor_style'  => 'capital-block-alert',
-			'editor_script' => 'capital-block-alert',
-		] );
-	}
-} );
+// Set version number.
+$capital_block_info = get_file_data( __FILE__, [ 'version' => 'Version' ] );
+define( 'CAPITAL_BLOCK_VERSION', $capital_block_info['version'] );
 
-// Enqueue css for theme.
-add_action( 'wp_enqueue_scripts', function() {
-	wp_enqueue_style( 'capital-block-alert' );
-} );
+// Set asset URL.
+define( 'CAPITAL_BLOCK_ASSET_URL', plugin_dir_url( __FILE__ ) );
+
+// Load all files in includes dir.
+foreach ( scandir( __DIR__ . '/includes' ) as $file ) {
+	if ( preg_match( '#^[^._].*\.php$#u', $file ) ) {
+		require __DIR__ . '/includes/' . $file;
+	}
+}
