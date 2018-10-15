@@ -1,0 +1,22 @@
+extends _layout
+
+block vars
+    -
+        var title = 'Event Block';
+        var styles = ['event'];
+
+block content
+    .event
+        .event-content.event-col
+            .event-title Capital Party
+            p.event-meta
+                span.event-date
+                    strong @
+                    | 2018年6月5日
+            .event-description
+                | サイトでこの地図を表示すると、保存済みの場所が地図に表示されます。
+                | これらの保存済みの場所はサイトの訪問者には表示されません。訪問者にはその人専用の地図が表示されます。
+            a.event-link(href='#') 参加する
+        .event-map.event-col
+            iframe.event-map-iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1005.409769534596!2d139.6907369647524!3d35.6948299578802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f2d50adcdd83%3A0xdeb7a070fa25522e!2z44OZ44Or44K144O844Or5paw5a6_44Kw44Op44Oz44OJIOODm-ODvOODqw!5e0!3m2!1sja!2sjp!4v1539572939041", frameborder=0)
+
