@@ -1,5 +1,5 @@
 /**
- * Description
+ * Add input
  */
 
 const {registerBlockType} = wp.blocks;

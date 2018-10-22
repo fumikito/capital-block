@@ -98,11 +98,11 @@ gulp.task('reload', function () {
 // watch
 gulp.task('watch', function () {
   // Make SASS
-  gulp.watch('./src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/scss/**/*.scss', ['sass']);
   // JS
-  gulp.watch(['./src/js/**/*.js'], ['js']);
+  gulp.watch(['src/js/**/*.js'], ['js']);
   // PUG
-  gulp.watch(['./src/pug/**/*'], ['pug']);
+  gulp.watch(['src/pug/**/*'], ['pug']);
 });
 
 // Build
