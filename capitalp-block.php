@@ -3,7 +3,7 @@
  * Plugin Name: Capital Block
  * Plugin URI: https://github.com/fumikito/capital-block
  * Description: Add original block for Gutenberg.
- * Version: 1.0.0
+ * Version: 1.0.3
  * Author: Capital P
  * Author URI: https://capitalp.jp
  *
