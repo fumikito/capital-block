@@ -64,4 +64,30 @@ registerBlockType( 'capital-block/alert', {
     );
   },
 
+  transforms: {
+    from: [
+      {
+        type: 'shortcode',
+        tag: 'zange-alert',
+        attributes: {
+          style: {
+            type: 'string',
+            shortcode: ( attributes ) => {
+              return attributes.named.style || 'info';
+            },
+          },
+          content: {
+            type: 'array',
+            shortcode: ( attributes, content ) => {
+              const honbun = content.shortcode.content || '';
+              return [
+                <p>{honbun}</p>
+              ];
+            },
+          },
+        },
+      },
+    ]
+  },
+
 } );

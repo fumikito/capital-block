@@ -14,7 +14,7 @@ add_action( 'init', function() {
 	// Register JS
 	wp_register_script( 'capital-block-alert', CAPITAL_BLOCK_ASSET_URL . 'assets/js/alert.js', [ 'wp-element', 'wp-blocks' ], CAPITAL_BLOCK_VERSION, true );
 	// Register block.
-	if ( defined( 'GUTENBERG_VERSION' ) ) {
+	if ( function_exists( 'register_block_type' ) ) {
 		// Alert Block.
 		register_block_type( 'capital-block/alert', [
 			'editor_style'  => 'capital-block-alert',
