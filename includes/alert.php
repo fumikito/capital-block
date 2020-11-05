@@ -13,14 +13,11 @@ add_action( 'init', function() {
 	wp_register_style( 'capital-block-alert', CAPITAL_BLOCK_ASSET_URL . 'assets/css/alert.css', [], CAPITAL_BLOCK_VERSION );
 	// Register JS
 	wp_register_script( 'capital-block-alert', CAPITAL_BLOCK_ASSET_URL . 'assets/js/alert.js', [ 'wp-element', 'wp-blocks' ], CAPITAL_BLOCK_VERSION, true );
-	// Register block.
-	if ( defined( 'GUTENBERG_VERSION' ) ) {
-		// Alert Block.
-		register_block_type( 'capital-block/alert', [
-			'editor_style'  => 'capital-block-alert',
-			'editor_script' => 'capital-block-alert',
-		] );
-	}
+	// Register Alert block.
+	register_block_type( 'capital-block/alert', [
+		'editor_style'  => 'capital-block-alert',
+		'editor_script' => 'capital-block-alert',
+	] );
 } );
 
 // Enqueue css for theme.

@@ -25,27 +25,25 @@ add_action( 'init', function() {
 	wp_register_style( 'capital-block-event', CAPITAL_BLOCK_ASSET_URL . 'assets/css/event.css', [], CAPITAL_BLOCK_VERSION );
 	wp_register_script( 'capital-block-event', CAPITAL_BLOCK_ASSET_URL . 'assets/js/event.js', [ 'wp-element', 'wp-blocks' ], CAPITAL_BLOCK_VERSION, true );
 	// Register block.
-	if ( defined( 'GUTENBERG_VERSION' ) ) {
-		register_block_type( 'capital-block/event', [
-			'editor_style'    => 'capital-block-event',
-			'editor_script'   => 'capital-block-event',
-			'attributes'      => [
-				'year'  => [
-					'type' => 'integer',
-				],
-				'month' => [
-					'type' => 'integer',
-				],
+	register_block_type( 'capital-block/event', [
+		'editor_style'    => 'capital-block-event',
+		'editor_script'   => 'capital-block-event',
+		'attributes'      => [
+			'year'  => [
+				'type' => 'integer',
 			],
-			'render_callback' => function( $attributes, $content = '' ) {
-				$attributes = wp_parse_args( $attributes, [
-					'year'  => 0,
-					'month' => 0,
-				] );
-				return capital_block_render_event( $attributes['year'], $attributes['month'] );
-			},
-		] );
-	}
+			'month' => [
+				'type' => 'integer',
+			],
+		],
+		'render_callback' => function( $attributes, $content = '' ) {
+			$attributes = wp_parse_args( $attributes, [
+				'year'  => 0,
+				'month' => 0,
+			] );
+			return capital_block_render_event( $attributes['year'], $attributes['month'] );
+		},
+	] );
 } );
 
 /**
